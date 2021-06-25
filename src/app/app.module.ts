@@ -17,11 +17,12 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { SummonerDetailsComponent } from './summoner-details/summoner-details.component';
-
+import {TabViewModule} from 'primeng/tabview';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'dashboard', component: DashboardComponent}
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'details', component: SummonerDetailsComponent},
 ]
 
 @NgModule({
@@ -31,6 +32,7 @@ const routes: Routes = [
       SummonerDetailsComponent
    ],
   imports: [
+    TabViewModule,
     HttpClientModule,
     ReactiveFormsModule,
     ButtonModule,

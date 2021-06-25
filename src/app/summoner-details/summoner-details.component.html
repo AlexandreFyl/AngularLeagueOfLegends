@@ -1,3 +1,36 @@
-<p>
-  summoner-details works!
-</p>
+<div class="p-grid">
+  <div class="p-col-6 p-offset-3">
+    <div class="p-grid">
+      <div class="p-col-8">
+        <p-card>
+          <h2>{{ summonerToShow.name }}</h2>
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/{{
+              summonerToShow.profileIconId
+            }}.png"
+            alt="Icone de profil"
+            class="profile-icon"
+          />
+        </p-card>
+      </div>
+
+      <div class="p-col-4" *ngIf="rdyToShow">
+        <p-card>
+          <p-tabView>
+            <p-tabPanel header="Solo Queue">
+              <h2>Rank : {{ soloQueue.tier }} {{ soloQueue.rank }}</h2>
+              <!-- <img src={{soloLogoToShow}} alt="icone de rank"> -->
+              <h3>{{ soloQueue.leaguePoints }} LP</h3>
+              <p>Winrate : {{ soloWinrate }} %</p>
+            </p-tabPanel>
+            <p-tabPanel header="Flex Queue">
+              <h2>Rank : {{ flexQueue.tier }} {{ flexQueue.rank }}</h2>
+              <h3>{{ flexQueue.leaguePoints }} LP</h3>
+              <p>Winrate : {{ flexWinrate }} %</p>
+            </p-tabPanel>
+          </p-tabView>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

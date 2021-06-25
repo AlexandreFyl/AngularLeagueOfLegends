@@ -56,6 +56,9 @@ export class DashboardComponent implements OnInit {
 
   onSubmit() {
     this.getSummoner();
+
+
+
   }
 
   getSummoner() {
@@ -66,11 +69,9 @@ export class DashboardComponent implements OnInit {
       )
       .pipe(take(1))
       .subscribe((res) => {
-
+        this.summonerService.summonerSaved = res;
         this.summonerToShow = res;
-        console.log(this.summonerToShow);
         this.isSummonerShown = true;
-
       });
   }
 }

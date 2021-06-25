@@ -9,20 +9,31 @@ import { Observable } from 'rxjs';
 })
 export class SummonerService {
 
-apiKey = "RGAPI-58f4443c-b820-4d8d-ac49-21453d8774fd";
+summonerSaved: Summoner = {
+  id: '',
+  accountId: '',
+  puuid: '',
+  name: '',
+  profileIconId: 0,
+  revisionDate: 0,
+  summonerLevel: 0
+};
+
+regionCodeSaved: string = "";
+
+apiKey = "RGAPI-49468cb7-6da1-458d-94be-9543457da308";
 
 constructor(private http: HttpClient) { }
 
 getSummonerBySummonerName(summonerName: string, regionCode: string): Observable<Summoner> {
-  const urlToGet = this.urlBuild(summonerName,regionCode);
+  const urlToGet = this.urlBuildSummonerName(summonerName,regionCode);
   console.log(urlToGet);
 
-  console.log(this.http.get<Summoner>(urlToGet).pipe(map((res: Summoner) => res)));
-
+  this.http.get<Summoner>(urlToGet).pipe(map((res: Summoner) => this.summonerSaved = res, this.regionCodeSaved = regionCode))
   return this.http.get<Summoner>(urlToGet).pipe(map((res: Summoner) => res));
 }
 
-urlBuild(summonerName: string, regionCode: string): string {
+urlBuildSummonerName(summonerName: string, regionCode: string): string {
   return "https://" + regionCode + ".api.riotgames.com/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + this.apiKey;
 }
 
