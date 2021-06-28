@@ -1,0 +1,13 @@
+.rank-img {
+  width: 25%;
+}
+
+.tier-img {
+  width: 50%;
+}
+
+.rank-organizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

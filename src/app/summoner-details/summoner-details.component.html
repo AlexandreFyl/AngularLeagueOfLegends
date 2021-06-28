@@ -17,16 +17,37 @@
       <div class="p-col-4" *ngIf="rdyToShow">
         <p-card>
           <p-tabView>
-            <p-tabPanel header="Solo Queue">
-              <h2>Rank : {{ soloQueue.tier }} {{ soloQueue.rank }}</h2>
-              <!-- <img src={{soloLogoToShow}} alt="icone de rank"> -->
+            <p-tabPanel header="Solo Queue" >
+              <div class="rank-organizer">
+              <img
+                src="{{ '../../assets/img/rank_icons/' + soloLogoToShow }}"
+                alt="icone de tier"
+                class="tier-img"
+              />
+              <img
+                src="{{ '../../assets/img/numbers/' + soloRankToShow }}"
+                alt="icone de rank"
+                class="rank-img"
+              />
               <h3>{{ soloQueue.leaguePoints }} LP</h3>
               <p>Winrate : {{ soloWinrate }} %</p>
+            </div>
             </p-tabPanel>
             <p-tabPanel header="Flex Queue">
-              <h2>Rank : {{ flexQueue.tier }} {{ flexQueue.rank }}</h2>
-              <h3>{{ flexQueue.leaguePoints }} LP</h3>
-              <p>Winrate : {{ flexWinrate }} %</p>
+              <div class="rank-organizer">
+                <img
+                  src="{{ '../../assets/img/rank_icons/' + flexLogoToShow }}"
+                  alt="icone de tier"
+                  class="tier-img"
+                />
+                <img
+                  src="{{ '../../assets/img/numbers/' + flexRankToShow }}"
+                  alt="icone de rank"
+                  class="rank-img"
+                />
+                <h3>{{ flexQueue.leaguePoints }} LP</h3>
+                <p>Winrate : {{ flexWinrate }} %</p>
+              </div>
             </p-tabPanel>
           </p-tabView>
         </p-card>
