@@ -1,49 +1,58 @@
-<div class="p-grid">
-  <div class="p-col-4 p-offset-4">
-    <p-card>
-      <form [formGroup]="summonerForm" (ngSubmit)="onSubmit()">
-        <div class="p-fluid">
-          <div class="p-field">
-            <label for="summonerName">Summoner name</label>
-            <input
-              formControlName="summonerName"
-              id="summonerName"
-              type="text"
-              pInputText
-            />
-          </div>
-          <p-dropdown
-            formControlName="summonerRegion"
-            [options]="regions"
-            optionLabel="fullName"
-            [showTransitionOptions]="'250ms'"
-            [hideTransitionOptions]="'350ms'"
-            placeholder="Select a region"
-          ></p-dropdown>
-        </div>
-        <div class="p-d-flex right-align">
-          <p-button type="submit" styleClass="login-btn">Submit</p-button>
-        </div>
-      </form>
-    </p-card>
-    <div class="p-mt-4" *ngIf="isSummonerShown">
+<div class="content">
+  <div class="p-grid">
+    <div class="p-col-4 p-offset-4">
       <p-card>
-        <div class="p-d-flex showSummoner">
-          <h2>{{ summonerToShow.name }}</h2>
-          <img
-            src="https://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/{{
-              summonerToShow.profileIconId
-            }}.png"
-            alt="Icone de profil"
-            class="profile-icon"
-          />
-          <h3 class="p-d-flex vertical-align">
-            <span class="experience"></span>LVL.
-            {{ summonerToShow.summonerLevel }}
-          </h3>
-          <p-button label="Get details" icon="fas fa-chevron-right" iconPos="right" routerLink="/details"></p-button>
-        </div>
+        <form [formGroup]="summonerForm" (ngSubmit)="onSubmit()">
+          <div class="p-fluid">
+            <div class="p-field">
+              <label for="summonerName">Summoner name</label>
+              <input
+                formControlName="summonerName"
+                id="summonerName"
+                type="text"
+                pInputText
+              />
+            </div>
+            <p-dropdown
+              formControlName="summonerRegion"
+              [options]="regions"
+              optionLabel="fullName"
+              [showTransitionOptions]="'250ms'"
+              [hideTransitionOptions]="'350ms'"
+              placeholder="Select a region"
+            ></p-dropdown>
+          </div>
+          <div class="p-d-flex d-col p-mt-5">
+            <p class="bold">Save summoner ?</p>
+            <p-inputSwitch formControlName="saveSummoner"></p-inputSwitch>
+            <p-button type="submit" styleClass="login-btn">Submit</p-button>
+          </div>
+        </form>
       </p-card>
+      <div class="p-mt-4" *ngIf="isSummonerShown">
+        <p-card>
+          <div class="p-d-flex showSummoner">
+            <h2>{{ summonerToShow.name }}</h2>
+            <img
+              src="https://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/{{
+                summonerToShow.profileIconId
+              }}.png"
+              alt="Icone de profil"
+              class="profile-icon"
+            />
+            <h3 class="p-d-flex vertical-align">
+              <span class="experience"></span>LVL.
+              {{ summonerToShow.summonerLevel }}
+            </h3>
+            <p-button
+              label="Get details"
+              icon="fas fa-chevron-right"
+              iconPos="right"
+              routerLink="/details"
+            ></p-button>
+          </div>
+        </p-card>
+      </div>
     </div>
   </div>
 </div>

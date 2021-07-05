@@ -21,7 +21,7 @@ summonerSaved: Summoner = {
 
 regionCodeSaved: string = "";
 
-apiKey = "RGAPI-883c7625-8994-4803-be3f-72c606ccee45";
+apiKey = "RGAPI-51bf9c2f-57e4-4eb2-af23-59a89b9308e5";
 
 constructor(private http: HttpClient) { }
 

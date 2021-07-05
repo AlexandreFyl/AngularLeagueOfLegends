@@ -27,10 +27,11 @@
               <img
                 src="{{ '../../assets/img/numbers/' + soloRankToShow }}"
                 alt="icone de rank"
-                class="rank-img"
+                class="rank-img p-pt-3"
               />
               <h3>{{ soloQueue.leaguePoints }} LP</h3>
-              <p>Winrate : {{ soloWinrate }} %</p>
+              <p>{{ soloQueue.wins }} wins | {{ soloQueue.losses }} losses</p>
+              <p>{{ soloWinrate }} %</p>
             </div>
             </p-tabPanel>
             <p-tabPanel header="Flex Queue">
@@ -43,10 +44,11 @@
                 <img
                   src="{{ '../../assets/img/numbers/' + flexRankToShow }}"
                   alt="icone de rank"
-                  class="rank-img"
+                  class="rank-img p-pt-3"
                 />
                 <h3>{{ flexQueue.leaguePoints }} LP</h3>
-                <p>Winrate : {{ flexWinrate }} %</p>
+                <p>{{ flexQueue.wins }} wins | {{ flexQueue.losses }} losses</p>
+                <p>{{ flexWinrate }} %</p>
               </div>
             </p-tabPanel>
           </p-tabView>

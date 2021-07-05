@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 //components
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
 // primeng
 import {CardModule} from 'primeng/card';
 import {DropdownModule} from 'primeng/dropdown';
@@ -18,6 +18,10 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { SummonerDetailsComponent } from './summoner-details/summoner-details.component';
 import {TabViewModule} from 'primeng/tabview';
+import {MenubarModule} from 'primeng/menubar';
+import {InputSwitchModule} from 'primeng/inputswitch';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -27,11 +31,14 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+      AppComponent,
       DashboardComponent,
-      SummonerDetailsComponent
+      SummonerDetailsComponent,
+      NavbarComponent
    ],
   imports: [
+    InputSwitchModule,
+    MenubarModule,
     TabViewModule,
     HttpClientModule,
     ReactiveFormsModule,

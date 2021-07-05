@@ -15,6 +15,24 @@
   flex-direction: column;
 }
 
-.vertical-align {
+
+.d-col {
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.content {
+  height: calc(100vh - 105px);
+  display:flex;
+  justify-content: center;
   align-items: center;
 }
+
+.p-grid {
+  width: 100%;
+}
+
