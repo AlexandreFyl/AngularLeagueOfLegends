@@ -1,11 +1,17 @@
+:root {
+  --main-color: #14213d;
+  --accent-color: #fca311;
+  --grey : #e5e5e5;
+}
+
+
 .text-center {
   text-align: center;
 }
 
-
 .experience {
-  background: url('./assets/img/exp.png');
-  background-size:contain;
+  background: url("./assets/img/exp.png");
+  background-size: contain;
   height: 50px;
   width: 50px;
   display: block;
@@ -17,5 +23,11 @@
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
+
+body {
+  background-color: #e5e5e5;
+}
+
+

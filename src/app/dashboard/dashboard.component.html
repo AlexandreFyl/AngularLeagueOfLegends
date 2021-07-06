@@ -1,7 +1,7 @@
 <div class="content">
   <div class="p-grid">
-    <div class="p-col-4 p-offset-4">
-      <p-card>
+    <div class="p-col-4 p-offset-4 p-mt-4">
+      <p-card styleClass="p-card-style">
         <form [formGroup]="summonerForm" (ngSubmit)="onSubmit()">
           <div class="p-fluid">
             <div class="p-field">
@@ -30,7 +30,7 @@
         </form>
       </p-card>
       <div class="p-mt-4" *ngIf="isSummonerShown">
-        <p-card>
+        <p-card styleClass="p-card-style">
           <div class="p-d-flex showSummoner">
             <h2>{{ summonerToShow.name }}</h2>
             <img

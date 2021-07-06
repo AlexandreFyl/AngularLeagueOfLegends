@@ -36,3 +36,6 @@
   width: 100%;
 }
 
+::ng-deep .p-card-style {
+  border: 1px solid var(--main-color);
+}

@@ -11,3 +11,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+::ng-deep .p-card-style {
+  border: 1px solid var(--main-color);
+}

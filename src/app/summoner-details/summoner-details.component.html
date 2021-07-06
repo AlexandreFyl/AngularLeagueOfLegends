@@ -1,58 +1,64 @@
-<div class="p-grid">
-  <div class="p-col-6 p-offset-3">
-    <div class="p-grid">
-      <div class="p-col-8">
-        <p-card>
-          <h2>{{ summonerToShow.name }}</h2>
-          <img
-            src="https://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/{{
-              summonerToShow.profileIconId
-            }}.png"
-            alt="Icone de profil"
-            class="profile-icon"
-          />
-        </p-card>
-      </div>
+<div class="p-mt-5">
+  <div class="p-grid">
+    <div class="p-col-6 p-offset-3">
+      <div class="p-grid">
+        <div class="p-col-8">
+          <p-card styleClass="p-card-style">
+            <h2>{{ summonerToShow.name }}</h2>
+            <img
+              src="https://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/{{
+                summonerToShow.profileIconId
+              }}.png"
+              alt="Icone de profil"
+              class="profile-icon"
+            />
+          </p-card>
+        </div>
 
-      <div class="p-col-4" *ngIf="rdyToShow">
-        <p-card>
-          <p-tabView>
-            <p-tabPanel header="Solo Queue" >
-              <div class="rank-organizer">
-              <img
-                src="{{ '../../assets/img/rank_icons/' + soloLogoToShow }}"
-                alt="icone de tier"
-                class="tier-img"
-              />
-              <img
-                src="{{ '../../assets/img/numbers/' + soloRankToShow }}"
-                alt="icone de rank"
-                class="rank-img p-pt-3"
-              />
-              <h3>{{ soloQueue.leaguePoints }} LP</h3>
-              <p>{{ soloQueue.wins }} wins | {{ soloQueue.losses }} losses</p>
-              <p>{{ soloWinrate }} %</p>
-            </div>
-            </p-tabPanel>
-            <p-tabPanel header="Flex Queue">
-              <div class="rank-organizer">
-                <img
-                  src="{{ '../../assets/img/rank_icons/' + flexLogoToShow }}"
-                  alt="icone de tier"
-                  class="tier-img"
-                />
-                <img
-                  src="{{ '../../assets/img/numbers/' + flexRankToShow }}"
-                  alt="icone de rank"
-                  class="rank-img p-pt-3"
-                />
-                <h3>{{ flexQueue.leaguePoints }} LP</h3>
-                <p>{{ flexQueue.wins }} wins | {{ flexQueue.losses }} losses</p>
-                <p>{{ flexWinrate }} %</p>
-              </div>
-            </p-tabPanel>
-          </p-tabView>
-        </p-card>
+        <div class="p-col-4" *ngIf="rdyToShow">
+          <p-card styleClass="p-card-style">
+            <p-tabView>
+              <p-tabPanel header="Solo Queue">
+                <div class="rank-organizer">
+                  <img
+                    src="{{ '../../assets/img/rank_icons/' + soloLogoToShow }}"
+                    alt="icone de tier"
+                    class="tier-img"
+                  />
+                  <img
+                    src="{{ '../../assets/img/numbers/' + soloRankToShow }}"
+                    alt="icone de rank"
+                    class="rank-img p-pt-3"
+                  />
+                  <h3>{{ soloQueue.leaguePoints }} LP</h3>
+                  <p>
+                    {{ soloQueue.wins }} wins | {{ soloQueue.losses }} losses
+                  </p>
+                  <p>{{ soloWinrate }} %</p>
+                </div>
+              </p-tabPanel>
+              <p-tabPanel header="Flex Queue">
+                <div class="rank-organizer">
+                  <img
+                    src="{{ '../../assets/img/rank_icons/' + flexLogoToShow }}"
+                    alt="icone de tier"
+                    class="tier-img"
+                  />
+                  <img
+                    src="{{ '../../assets/img/numbers/' + flexRankToShow }}"
+                    alt="icone de rank"
+                    class="rank-img p-pt-3"
+                  />
+                  <h3>{{ flexQueue.leaguePoints }} LP</h3>
+                  <p>
+                    {{ flexQueue.wins }} wins | {{ flexQueue.losses }} losses
+                  </p>
+                  <p>{{ flexWinrate }} %</p>
+                </div>
+              </p-tabPanel>
+            </p-tabView>
+          </p-card>
+        </div>
       </div>
     </div>
   </div>
