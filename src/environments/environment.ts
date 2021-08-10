@@ -6,6 +6,7 @@ export const environment = {
   production: false
 };
 
+export const riot_api_key = "RGAPI-c96194fc-2007-42a8-bf04-03fd283d9b1b";
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

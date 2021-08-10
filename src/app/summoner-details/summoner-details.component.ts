@@ -2,7 +2,6 @@ import { LeagueService } from './../services/league.service';
 import { Component, OnInit } from '@angular/core';
 import { Summoner } from '../model/Summoner';
 import { SummonerService } from '../services/summoner.service';
-import { take } from 'rxjs/operators';
 import { League } from '../model/League';
 
 @Component({
@@ -65,18 +64,25 @@ export class SummonerDetailsComponent implements OnInit {
   ngOnInit() {
     this.leagueService
       .getLeagueBySummonerId(this.summonerToShow.id, this.regionCodeSaved)
-      .subscribe((res) => {
+      .subscribe(() => {
+
+        // on gere le probleme si le joueur ne joue pas en flex/solo avec des if
         this.flexQueue = this.leagueService.flexQueue;
         this.soloQueue = this.leagueService.soloQueue;
-        console.log(this.getWinrate(this.leagueService.soloQueue.wins, this.leagueService.soloQueue.losses));
-        console.log(372/(372+382)*100);
 
-        this.soloWinrate = this.getWinrate(this.leagueService.soloQueue.wins, this.leagueService.soloQueue.losses);
-        this.flexWinrate = this.getWinrate(this.leagueService.flexQueue.wins, this.leagueService.flexQueue.losses);
-        this.getTierImgToShow(this.leagueService.soloQueue.tier, "solo");
-        this.getTierImgToShow(this.leagueService.flexQueue.tier, "flex");
-        this.getRankImgToShow(this.leagueService.soloQueue.rank, "solo");
-        this.getRankImgToShow(this.leagueService.flexQueue.rank, "flex");
+        if (this.flexQueue != undefined) {
+          // ajout d'un param pour fix les headers
+          this.flexQueue.title = "Flex Queue";
+          this.flexWinrate = this.getWinrate(this.leagueService.flexQueue.wins, this.leagueService.flexQueue.losses);
+          this.getTierImgToShow(this.leagueService.flexQueue.tier, "flex");
+          this.getRankImgToShow(this.leagueService.flexQueue.rank, "flex");
+        } else if (this.soloQueue != undefined) {
+          this.soloQueue.title = "Solo Queue";
+          this.soloWinrate = this.getWinrate(this.leagueService.soloQueue.wins, this.leagueService.soloQueue.losses);
+          this.getTierImgToShow(this.leagueService.soloQueue.tier, "solo");
+          this.getRankImgToShow(this.leagueService.soloQueue.rank, "solo");
+        }
+
         this.rdyToShow = true;
 
 
@@ -100,7 +106,7 @@ export class SummonerDetailsComponent implements OnInit {
       logo = "silver.png";
     } else if(tier === "GOLD") {
       logo = "gold.png";
-    } else if(tier === "PLATINIUM") {
+    } else if(tier === "PLATINUM") {
       logo = "plat.png";
     } else if(tier === "DIAMOND") {
       logo = "diamond.png";

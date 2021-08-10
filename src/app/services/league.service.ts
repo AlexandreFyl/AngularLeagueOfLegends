@@ -1,3 +1,4 @@
+import { riot_api_key } from './../../environments/environment';
 import { League } from './../model/League';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class LeagueService {
 
-apiKey = "RGAPI-51bf9c2f-57e4-4eb2-af23-59a89b9308e5";
+apiKey = riot_api_key;
 
 flexQueue: League = {
   leagueId: "",

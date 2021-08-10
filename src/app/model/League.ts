@@ -11,5 +11,6 @@ export interface League {
   veteran: boolean,
   inactive: boolean,
   freshBlood: boolean,
-  hotStreak: boolean
+  hotStreak: boolean,
+  title?: string
 }

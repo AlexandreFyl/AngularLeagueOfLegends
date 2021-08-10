@@ -1,3 +1,4 @@
+import { riot_api_key } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -21,7 +22,7 @@ summonerSaved: Summoner = {
 
 regionCodeSaved: string = "";
 
-apiKey = "RGAPI-51bf9c2f-57e4-4eb2-af23-59a89b9308e5";
+apiKey = riot_api_key;
 
 constructor(private http: HttpClient) { }
 

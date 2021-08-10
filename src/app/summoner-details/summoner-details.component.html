@@ -18,7 +18,7 @@
         <div class="p-col-4" *ngIf="rdyToShow">
           <p-card styleClass="p-card-style">
             <p-tabView>
-              <p-tabPanel header="Solo Queue">
+              <p-tabPanel header="{{soloQueue.title}}" *ngIf="soloQueue != undefined">
                 <div class="rank-organizer">
                   <img
                     src="{{ '../../assets/img/rank_icons/' + soloLogoToShow }}"
@@ -37,7 +37,7 @@
                   <p>{{ soloWinrate }} %</p>
                 </div>
               </p-tabPanel>
-              <p-tabPanel header="Flex Queue">
+              <p-tabPanel header="{{flexQueue.title}}" *ngIf="flexQueue != undefined">
                 <div class="rank-organizer">
                   <img
                     src="{{ '../../assets/img/rank_icons/' + flexLogoToShow }}"
