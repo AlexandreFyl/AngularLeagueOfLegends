@@ -12,13 +12,19 @@
               alt="Icone de profil"
               class="profile-icon"
             />
+            <hr class="p-mt-5">
+            <div class="p-grid" *ngIf="champsRdyToShow">
+              <div class="p-col-4"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{firstMostPlayedName}}_0.jpg" alt="Champion numéro1"></div>
+              <div class="p-col-4"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{secondMostPlayedName}}_0.jpg" alt="Champion numéro2"></div>
+              <div class="p-col-4"><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{thirdMostPlayedName}}_0.jpg" alt="Champion numéro3"></div>
+            </div>
           </p-card>
         </div>
 
         <div class="p-col-4" *ngIf="rdyToShow">
           <p-card styleClass="p-card-style">
             <p-tabView>
-              <p-tabPanel header="{{soloQueue.title}}" *ngIf="soloQueue != undefined">
+              <p-tabPanel header="{{soloQueue.title}}" *ngIf="soloQueue !== undefined">
                 <div class="rank-organizer">
                   <img
                     src="{{ '../../assets/img/rank_icons/' + soloLogoToShow }}"
@@ -37,7 +43,7 @@
                   <p>{{ soloWinrate }} %</p>
                 </div>
               </p-tabPanel>
-              <p-tabPanel header="{{flexQueue.title}}" *ngIf="flexQueue != undefined">
+              <p-tabPanel header="{{flexQueue.title}}" *ngIf="flexQueue !== undefined">
                 <div class="rank-organizer">
                   <img
                     src="{{ '../../assets/img/rank_icons/' + flexLogoToShow }}"

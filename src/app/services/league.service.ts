@@ -48,13 +48,18 @@ constructor(private http: HttpClient) { }
 getLeagueBySummonerId(summonerId: string, regionCode: string) {
   const urlToGet = this.urlBuildLeague(summonerId,regionCode);
   return this.http.get<Array<League>>(urlToGet).pipe(map((res) => {
+    console.log("res",res);
 
-    console.log("0",res[0]);
-    console.log("1",res[1]);
+    res.forEach(element => {
+      if (element.queueType === "RANKED_SOLO_5x5") {
+        this.soloQueue = element;
+      } else if(element.queueType === "RANKED_FLEX_SR") {
+        this.flexQueue = element;
+      } else {
+        console.log("Mode de jeu non pris en charge");
+      }
+    });
 
-    this.flexQueue = res[0];
-
-    this.soloQueue = res[1];
   }));
 }
 

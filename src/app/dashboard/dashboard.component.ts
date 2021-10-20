@@ -1,3 +1,4 @@
+import { version } from './../../environments/environment';
 import { SummonerService } from './../services/summoner.service';
 import { Component, OnInit } from '@angular/core';
 import { Region } from '../model/Region';
@@ -12,6 +13,8 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  version: string = version;
+
   regions: Region[];
   placeholder = "Europe West";
   isSummonerShown: boolean = false;
